@@ -20,12 +20,12 @@ class Ultrasonic
 {
 	public:
 		Ultrasonic(int pin);
-        void DistanceMeasure(void);
+        	void DistanceMeasure(void);
 		long microsecondsToCentimeters(void);
 		long microsecondsToInches(void);
 	private:
 		int _pin;//pin number of Arduino that is connected with SIG pin of Ultrasonic Ranger.
-        long duration;// the Pulse time received;
+        	long duration;// the Pulse time received;
 };
 
 Ultrasonic::Ultrasonic(int pin)
@@ -36,7 +36,7 @@ Ultrasonic::Ultrasonic(int pin)
 /*Begin the detection and get the pulse back signal*/
 void Ultrasonic::DistanceMeasure(void)
 {
-    pinMode(_pin, OUTPUT);
+    	pinMode(_pin, OUTPUT);
 	digitalWrite(_pin, LOW);
 	delayMicroseconds(2);
 	digitalWrite(_pin, HIGH);
@@ -146,17 +146,17 @@ void loop()
   arrivedcount = 0;
   ultrasonic.DistanceMeasure();
   range = ultrasonic.microsecondsToCentimeters();
-   sprintf(buf, "Alerte intrus , distance %u cm\n", range);
+  sprintf(buf, "Alerte intrus , distance %u cm\n", range);
   
-    Serial.println(buf);
-    message.retained = false;
-    message.dup = false;
-    message.payload = (void*)buf;
-    message.qos = MQTT::QOS1;
-    message.payloadlen = strlen(buf)+1;
-    int rc = client.publish(topic, message);
-    while (arrivedcount == 1) { client.yield(1000); }
+  Serial.println(buf);
+  message.retained = false;
+  message.dup = false;
+  message.payload = (void*)buf;
+  message.qos = MQTT::QOS1;
+  message.payloadlen = strlen(buf)+1;
+  int rc = client.publish(topic, message);
+  while (arrivedcount == 1) { client.yield(1000); }
               
-    delay(1000);
+  delay(1000);
 }
 
