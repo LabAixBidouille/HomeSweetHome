@@ -55,7 +55,7 @@ int arrivedcount = 0;
  
 EthernetStack ipstack;
 MQTT::Message message;
-MQTT::Client<EthernetStack, Countdown> client = MQTT::Client<EthernetStack, Countdown>(ipstack);
+MQTT::Client<EthernetStack, Countdown> x = MQTT::Client<EthernetStack, Countdown>(ipstack);
 
 /**************************
  * PARTIE MQTT SUBSCRIBE
