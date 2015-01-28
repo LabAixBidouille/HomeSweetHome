@@ -23,7 +23,8 @@ public class DataController  {
 
     @RequestMapping(value = "/temperature", method = RequestMethod.GET, produces = "application/json")
     public String temperature() {
-        return "{\"x\":" + System.currentTimeMillis() +", \"y\":"+ temperature +"}";
+            int x = 0;
+            return "{\"x\":" + x +", \"y\":"+ humidite +"}";
     }
 
     @RequestMapping(value = "/humidite", method = RequestMethod.GET, produces = "application/json")
