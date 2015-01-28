@@ -1,0 +1,6 @@
+org/labaix/conf/ThymeleafConfig.class
+org/labaix/controler/HelloController.class
+org/labaix/mqtt/TemperatureMessage.class
+org/labaix/conf/AppConf.class
+org/labaix/controler/DataController.class
+org/labaix/mqtt/MqttManager.class
