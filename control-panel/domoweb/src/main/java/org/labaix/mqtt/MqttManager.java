@@ -7,7 +7,7 @@ import org.eclipse.paho.client.mqttv3.MqttClient;
  */
 public class MqttManager {
 
-    private TemperatureMessage temperature = new TemperatureMessage("LABDemo/temperature");
+    private TemperatureMessage temperature = new TemperatureMessage("labaix/temperature");
 
     public void startReception() {
         try {
